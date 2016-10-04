@@ -1,0 +1,43 @@
+{{!< default}}
+
+{{!-- The comment above "< default" means - insert everything in this file into
+    the {{{body}}} of the default.hbs template, containing the blog header/footer. --}}
+{{#post}}
+
+<div id="main">
+    <!-- Post -->
+    <article class="post {{post_class}}">
+        <header>
+            <div class="title">
+                <hgroup><h2><a href="{{url}}">{{title}}</a></h2></hgroup>
+                <p>{{excerpt words="10"}}</p>
+            </div>
+            <div class="meta">
+                <time class="published" datetime="{{date format="YYYY-MM-DD"}}">{{date format="DD MMMM YYYY"}}</time>
+            <a href="{{author.url}}" class="author"><span class="name">{{author.name}}</span>{{#if author.image}}<img src="{{author.image}}" alt="{{author.name}}" /></a>{{/if}}
+                {{#if tags}}
+                        {{#foreach tags}}
+                            <a href="{{url}}">{{name}}</a>
+                        {{/foreach}}
+                {{/if}}
+            </div>
+        </header>
+        <section>
+            <a href="{{url}}" class="image featured"><img src="{{image}}" alt="{{title}}" /></a>
+            {{!-- The tag below includes the share - partials/share.hbs --}}
+            {{> "share"}}
+            <hr>
+            {{content}}
+            {{!-- The tag below includes the share - partials/share.hbs --}}
+            {{> "share"}}
+            <hr>
+        </section>
+        <footer>
+            {{!-- The tag below includes the footerblog - partials/footerblog.hbs --}}
+            {{> "footerblog"}}
+        </footer>
+    </article>
+    {{!-- The tag below includes the comments - partials/comments.hbs --}}
+    {{> "comments"}}
+</div>
+{{/post}}

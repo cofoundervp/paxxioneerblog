@@ -1,0 +1,9 @@
+{{#get "users" limit="all"}}
+    {{#foreach users}}
+        <h2>About {{name}}</h2>
+        <p>{{bio}}</p>
+        <ul class="actions">
+            <li><a href="{{url}}" class="button">Learn More</a></li>
+        </ul>
+    {{/foreach}}
+{{/get}}

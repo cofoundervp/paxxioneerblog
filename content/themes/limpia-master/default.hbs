@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    {{!-- Document Settings --}}
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    {{!-- Page Meta --}}
+    <title>{{meta_title}}</title>
+    <meta name="description" content="{{meta_description}}" />
+    <link rel="apple-touch-icon" href="{{asset "/apple-touch-icon.png"}}">
+    <!-- Place favicon.ico in the root directory -->
+    {{!-- Mobile Meta --}}
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    {{!-- Brand icon --}}
+    <link rel="shortcut icon" href="{{asset "/favicon.ico"}}">
+    {{!-- Styles'n'Scripts --}}
+    <script type="text/javascript" src="{{asset "/js/ie/respond.min.js"}}"></script>
+    <link rel="stylesheet" type="text/css" href="{{asset "/css/main.css"}}" />
+    <link rel="stylesheet" type="text/css" href="{{asset "/css/ie9.css"}}" />
+    <link rel="stylesheet" type="text/css" href="{{asset "/css/ie8.css"}}" />
+    {{!-- Ghost outputs important style and meta data with this tag --}}
+    {{ghost_head}}
+</head>
+<body class="{{body_class}}">
+    <div id="wrapper">
+        <header>
+            {{!-- The tag below includes the heading - partials/heding.hbs --}}
+            {{> "heading"}}
+        </header>
+        {{!-- All the main content gets inserted here, index.hbs, post.hbs, etc --}}
+        <main>
+            <section id="results"></section>
+            {{{body}}}
+        </main>
+        <!-- Sidebar -->
+        <aside>
+            {{!-- The tag below includes the sidebar - partials/sidebar.hbs --}}
+            {{> "sidebar"}}
+        </aside>
+    </div>
+    {{!-- jQuery needs to come before `{{ghost_foot}}` so that jQuery can be used in code injection --}}
+    <script type="text/javascript" src="{{asset "/js/jquery.min.js"}}"></script>
+    {{!-- Ghost outputs important scripts and data with this tag --}}
+    {{ghost_foot}}
+    {{!-- Fitvids makes video embeds responsive and awesome --}}
+    <script type="text/javascript" src="{{asset "/js/skel.min.js"}}"></script>
+    {{!-- The main JavaScript file for Casper --}}
+    <script type="text/javascript" src="{{asset "/js/util.js"}}"></script>
+    <script type="text/javascript" src="{{asset "/js/main.js"}}"></script>
+    <script type="text/javascript" src="{{asset "/js/ghosthunter.min.js"}}"></script>
+    <script>
+        $("#search-field").ghostHunter({
+            results   : "#results"
+        });
+    </script>
+</body>
+</html>

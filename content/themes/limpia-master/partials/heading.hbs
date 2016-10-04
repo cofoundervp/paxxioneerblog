@@ -1,0 +1,38 @@
+<header id="header">
+    <h1><a href="{{@blog.url}}">{{@blog.title}}</a></h1>
+    <nav class="links">
+        <ul>
+            {{navigation}}
+        </ul>
+    </nav>
+    <nav class="main">
+        <ul>
+            <li class="search">
+                <a class="fa-search" href="#search">Search</a>
+                <form id="search">
+                    <input id="search-field" type="text" name="query" placeholder="Search" />
+                </form>
+            </li>
+            <li class="menu">
+                <a class="fa-bars" href="#menu">Menu</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<!-- Menu -->
+<section id="menu">
+    <!-- Links -->
+    <section>
+        <ul class="links">
+            {{navigation}}
+        </ul>
+    </section>
+
+    <!-- Actions -->
+    <section>
+        <ul class="actions vertical">
+            <li><a href="{{@blog.url}}/subscribe" class="button big fit">Subscribirse</a></li>
+        </ul>
+    </section>
+
+</section>

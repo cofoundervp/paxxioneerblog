@@ -1,0 +1,25 @@
+{{!< default}}
+
+{{#post}}
+    <div id="main">
+
+        <!-- Post -->
+        <article class="post {{post_class}}">
+            <header>
+                <div class="title">
+                    <hgroup><h2><a href="{{url}}">{{title}}</a></h2></hgroup>
+                    <p>{{excerpt words="10"}}</p>
+                </div>
+                <div class="meta">
+                    <time class="published" datetime="{{date format="YYYY-MM-DD"}}">{{date format="DD MMMM YYYY"}}</time>
+                <a href="{{author.url}}" class="author"><span class="name">{{author.name}}</span>{{#if author.image}}<img src="{{author.image}}" alt="{{author.name}}" /></a>{{/if}}
+                </div>
+            </header>
+            <section>
+                <a href="{{url}}" class="image featured"><img src="{{image}}" alt="{{title}}" /></a>
+                {{content}}
+                <hr>
+            </section>
+        </article>
+    </div>
+{{/post}}

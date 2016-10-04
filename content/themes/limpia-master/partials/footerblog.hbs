@@ -1,0 +1,16 @@
+<ul class="actions pagination">
+    {{#next_post}}
+        <li><a href="{{url}}" class="button big previous">{{title}}</a></li>
+    {{/next_post}}
+    {{#prev_post}}
+        <li><a href="{{url}}" class="button big next">{{title}}</a></li>
+    {{/prev_post}}
+</ul>
+{{#if @labs.subscribers}}
+    <section>
+        <h5>Subscribe to {{@blog.title}}</h5>
+        <p>Get the latest posts delivered right to your inbox.</p>
+        {{subscribe_form placeholder="Your email address"}}
+        <span>or subscribe <a href="http://cloud.feedly.com/#subscription/feed/{{@blog.url}}/rss/">via RSS</a> with Feedly!</span>
+    </section>
+{{/if}}

@@ -1,0 +1,10 @@
+<!-- Pagination -->
+<ul class="actions pagination">
+{{#if prev}}
+    <li><a href="{{page_url prev}}" class="button big previous">Previous Page</a></li>
+{{/if}}
+    <li>page {{page}} of {{pages}}</li>
+{{#if next}}
+    <li><a href="{{page_url next}}" class="button big next">Next Page</a></li>
+{{/if}}
+</ul>

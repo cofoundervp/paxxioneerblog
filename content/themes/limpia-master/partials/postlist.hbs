@@ -1,0 +1,13 @@
+{{#get "tags" as |tag|}}
+    {{#foreach tag}}
+        <li>
+            <article>
+                <header>
+                    <h3><a href="{{url}}">{{name}}</a></h3>
+                    <p>{{description}}</p>
+                </header>
+                <a href="{{url}}" class="image"><img src="{{image}}" alt="{{name}}" /></a>
+            </article>
+        </li>
+    {{/foreach}}
+{{/get}}

@@ -1,0 +1,14 @@
+{{#get "posts" filter="featured:true" limit="4" as |featured|}}
+    {{#foreach featured}}
+        <div class="mini-posts">
+            <article class="mini-post">
+                <header>
+                    <h3><a href="{{url}}">{{title}}</a></h3>
+                    <time class="published" datetime="{{date format="YYYY-MM-DD"}}">{{date format="YYYY-MM-DD"}}</time>
+                    {{#if author.image}}<a href="{{author.url}}" class="author"><img src="{{author.image}}" alt="{{author.name}}" /></a>{{/if}}
+                </header>
+                <a href="{{url}}" class="image"><img src="{{image}}" alt="{{title}}" /></a>
+            </article>
+        </div>
+    {{/foreach}}
+{{/get}}

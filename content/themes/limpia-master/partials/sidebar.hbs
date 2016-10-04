@@ -1,0 +1,46 @@
+<!-- Sidebar -->
+<section id="sidebar">
+    <!-- Intro -->
+    <section id="intro">
+        <a href="{{@blog.url}}" class="logo"><img src="{{@blog.logo}}" alt="{{@blog.title}}" /></a>
+        <header>
+            <h2>{{@blog.title}}</h2>
+            <p><strong>{{@blog.description}}</strong></p>
+        </header>
+    </section>
+
+    <section>
+        <h2>publicidd</h2>
+        {{!-- The tag below includes the publicidad1 - partials/publicidad1.hbs --}}
+        {{> "publicidad1"}}
+    </section>
+    <!-- Mini Posts -->
+    <section>
+        <h2>Labs</h2>
+        {{!-- The tag below includes the minipost - partials/minipost.hbs --}}
+        {{> "minipost"}}
+    </section>
+    <!-- Posts List -->
+    <section>
+        <h2>Categorías</h2>
+        <ul class="posts">
+            {{!-- The tag below includes the postlist- partials/postlist.hbs --}}
+            {{> "postlist"}}
+        </ul>
+    </section>
+    <section>
+        <h2>Patrocinadores</h2>
+            {{!-- The tag below includes the patro- partials/patro.hbs --}}
+            {{> "patro"}}
+    </section>
+    <!-- About -->
+    <section class="blurb">
+        {{!-- The tag below includes the authorside- partials/authorside.hbs --}}
+        {{> "authorside"}}
+    </section>
+    <!-- Footer -->
+    <section id="footer">
+        {{!-- The tag below includes the footer - partials/footer.hbs --}}
+        {{> "footer"}}
+    </section>
+</section>

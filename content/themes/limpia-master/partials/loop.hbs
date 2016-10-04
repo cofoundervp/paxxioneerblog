@@ -1,0 +1,33 @@
+<div id="main">
+    {{#foreach posts}}
+        <article class="post {{post_class}}">
+            <header>
+                <div class="title">
+                    <h2><a href="{{url}}">{{title}}</a></h2>
+                    <p>{{excerpt words="10"}}</p>
+                </div>
+                <div class="meta">
+                    <time class="published" datetime="{{date format="YYYY-MM-DD"}}">{{date format="DD MMMM YYYY"}}</time>
+                <a href="{{author.url}}" class="author"><span class="name">{{author.name}}</span>{{#if author.image}}<img src="{{author.image}}" alt="{{author.name}}" /></a>{{/if}}
+                </div>
+            </header>
+            <a href="{{url}}" class="image featured"><img src="{{image}}" alt="{{title}}" /></a>
+            <p>{{excerpt words="40"}}</p>
+            <footer>
+                <ul class="actions">
+                    <li><a href="{{url}}" class="button big">Continue Reading</a></li>
+                </ul>
+                {{#if tags}}
+                    <ul class="stats">
+                        {{#foreach tags}}
+                            <li><a href="{{url}}">{{name}}</a></li>
+                        {{/foreach}}
+                    </ul>
+                {{/if}}
+            </footer>
+        </article>
+    {{/foreach}}
+</div>
+
+{{!-- Previous/next page links - displayed on every page --}}
+{{pagination}}
