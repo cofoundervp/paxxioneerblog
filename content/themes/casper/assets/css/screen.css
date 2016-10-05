@@ -446,13 +446,19 @@ margin on the iframe, cause it breaks stuff. */
    ========================================================================== */
 
 /* Clears shit */
-.clearfix:before,
 .clearfix:after {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
     content: " ";
-    display: table;
+    clear: both;
+    height: 0;
 }
-.clearfix:after { clear: both; }
-.clearfix { zoom: 1; }
+.clearfix { display: inline-block; }
+/* start commented backslash hack \*/
+* html .clearfix { height: 1%; }
+.clearfix { display: block; }
+/* close commented backslash hack */
 
 /* Hides shit */
 .hidden {
