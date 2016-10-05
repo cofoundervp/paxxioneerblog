@@ -1,0 +1,32 @@
+.post {
+    max-width: 898px;
+    overflow: hidden;
+}
+.post .post-feature-img {
+    float: left;
+    width: 30%;
+    display: block;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+}
+.post .post-feature-img a{
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+.post .post-content-group {
+    float: left;
+    width: 68%;
+    margin-left: 2%;
+}
+@media screen and (max-width: 767px) {
+    .post .post-feature-img {
+        width: 100%;
+        background-position: 0 0;
+    }
+    .post .post-content-group {
+        width: 100%;
+        margin-left: 0;
+    }
+}
