@@ -1,4 +1,5 @@
 node_modules
+content/data
 config.js
 npm-debug.log
 *.env
